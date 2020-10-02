@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  web-server:
+    image: php:7.2-apache
+    restart: always
+    container_name: quickView
+    ports:
+      - 8060:80
+    volumes:
+      - ./QuickView/:/var/www/html 
+    networks:
+      - project
+
+networks:
+  project:
+    driver: bridge
+
