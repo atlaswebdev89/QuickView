@@ -13,4 +13,34 @@ $(document).ready(function(){
         }
         // other options
     });
+
+    $('.overlay').on('click', function (e) {
+        e.preventDefault();
+        var id = $('.modals');
+        //Получаем ширину и высоту окна
+        var winH = $(window).height();
+        var winW = $(window).width();
+        //Устанавливаем всплывающее окно по центру
+        //id.css('top', winH/2-id.height()/2);
+       // id.css('left', winW/2-id.width()/2);
+            $('.overlay-bg').addClass('show');
+            $('.modals').addClass('show');
+            $('body').addClass('modal-open');
+    });
+
+    $('.modals').on('click', function (e) {
+        e.preventDefault();
+        if($(e.target).closest('.modal-block').length == 0) {
+            $('.overlay-bg').removeClass('show');
+            $('.modals').removeClass('show');
+            $('body').removeClass('modal-open');
+        }
+    });
+    $('.close-btn').on("click", function (e) {
+        e.preventDefault();
+        $('.overlay-bg').removeClass('show');
+        $('.modals').removeClass('show');
+        $('body').removeClass('modal-open');
+    })
+
 });
