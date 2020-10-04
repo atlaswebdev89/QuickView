@@ -2,7 +2,26 @@ $(document).ready(function(){
     $('.slick1').slick({
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        arrows: true,
+        adaptiveHeight: true,
+
+    });
+    $('.slick2').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        infinite: true,
+        autoplay: true,
+        centerMode:true,
+        fade: true,
+        adaptiveHeight: true,
+        dots: true,
+        appendDots: $('.wrap-slick2-dots'),
+        dotsClass:'slick2-dots',
+        appendArrows: $('.main-carusel'),
+        prevArrow:'<button class="arrow-slick2 prev-slick2"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+        nextArrow:'<button class="arrow-slick2 next-slick2"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
     });
 
     $('.items-product2').magnificPopup({
