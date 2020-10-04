@@ -250,3 +250,48 @@
     background-color: red;
 }
 /*========END slider==============*/
+
+/* Preloader QuickView */
+.preloader {
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+    top: 30px;
+    left: 0;
+    height: calc(100% - 30px);
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 600ms linear;
+}
+.preloader:after, .preloader:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    background-color: white;
+    border-radius: 50%;
+    border-right: 4px solid #5AAF63;
+}
+.preloader:after {
+    animation: 2s an1 infinite linear;
+}
+@keyframes an1 {
+    to {
+        transform: rotate(0);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+.show-preload {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* END BLOCK */

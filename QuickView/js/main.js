@@ -35,6 +35,14 @@ $(document).ready(function(){
 
     $('.overlay').on('click', function (e) {
         e.preventDefault();
+        //Включить прелоадер
+        $('.preloader').show();
+
+        //Выключить прелоадер
+        setTimeout(function(){
+            $('.preloader').removeClass('show-preload');
+        },1200);
+
         var id = $('.modals');
         //Получаем ширину и высоту окна
         var winH = $(window).height();
@@ -53,6 +61,7 @@ $(document).ready(function(){
             $('.overlay-bg').removeClass('show');
             $('.modals').removeClass('show');
             $('body').removeClass('modal-open');
+            $('.preloader').addClass('show-preload').hide();
         }
     });
     $('.close-btn').on("click", function (e) {
@@ -60,6 +69,7 @@ $(document).ready(function(){
         $('.overlay-bg').removeClass('show');
         $('.modals').removeClass('show');
         $('body').removeClass('modal-open');
+        $('.preloader').addClass('show-preload').hide();
     })
 
 });
