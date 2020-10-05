@@ -100,6 +100,7 @@
 
 .main-carusel {
    height: 100%;
+   background: linear-gradient(45deg, #EECFBA, #C5DDE8);
 }
 
 .main-carusel img{
@@ -114,6 +115,13 @@
     overflow-y: auto;
     background-color: white;
     height: 100%;
+}
+p.brw {
+    min-width: 420px;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+
 }
 
 /*END BLOCK*/

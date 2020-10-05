@@ -7,22 +7,7 @@ $(document).ready(function(){
         adaptiveHeight: true,
 
     });
-    $('.slick2').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        infinite: true,
-        autoplay: true,
-        centerMode:true,
-        fade: true,
-        adaptiveHeight: true,
-        dots: true,
-        appendDots: $('.wrap-slick2-dots'),
-        dotsClass:'slick2-dots',
-        appendArrows: $('.main-carusel'),
-        prevArrow:'<button class="arrow-slick2 prev-slick2"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
-        nextArrow:'<button class="arrow-slick2 next-slick2"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
-    });
+
 
     $('.items-product2').magnificPopup({
         delegate: 'a', // child items selector, by clicking on it popup will open
@@ -33,15 +18,65 @@ $(document).ready(function(){
         // other options
     });
 
+    function initSlickSlider (elem) {
+        $('.'+elem).slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            infinite: true,
+            autoplay: true,
+            centerMode:true,
+            fade: true,
+            adaptiveHeight: true,
+            dots: true,
+            appendDots: $('.wrap-slick2-dots'),
+            dotsClass:'slick2-dots',
+            appendArrows: $('.main-carusel'),
+            prevArrow:'<button class="arrow-slick2 prev-slick2"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+            nextArrow:'<button class="arrow-slick2 next-slick2"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+        });
+    }
+
+
+
     $('.overlay').on('click', function (e) {
         e.preventDefault();
         //Включить прелоадер
         $('.preloader').show();
+        //
+
+        let nameslider  = "slick2";
+        let imgBlock = $('.main-carusel');
+        let descBlock = $('.desc-block');
+        if(!imgBlock.hasClass(nameslider)) {
+            imgBlock.addClass(nameslider);
+                imgBlock.append('<img src='+ '/images/1.jpg ' +'>');
+                imgBlock.append('<img src='+ '/images/2.jpg ' +'>');
+                imgBlock.append('<img src='+ '/images/4.jpg ' +'>');
+            //Инициализация слайдера slick после получения всех images объекта
+            initSlickSlider(nameslider);
+        }
+
+        if(!descBlock.hasClass('load-desc')) {
+                descBlock.addClass('load-desc');
+                descBlock.prepend(
+                '<h3>Название товара</h3>'
+            ).append(
+                    '<p>Описание товара: что по чем и характеристики что по чем и характеристики</p>',
+                    '<ul>' +
+                    '<li>Первый пункт</li>' +
+                    '<li>второй пункт</li>' +
+                    '<li>Третий пункт</li>' +
+                    '<li>Четверный пункт</li>' +
+                    '</ul>',
+            )
+
+        }
 
         //Выключить прелоадер
         setTimeout(function(){
             $('.preloader').removeClass('show-preload');
-        },1200);
+        },600);
 
         var id = $('.modals');
         //Получаем ширину и высоту окна
