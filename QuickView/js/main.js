@@ -24,10 +24,10 @@ $(document).ready(function(){
             slidesToScroll: 1,
             arrows: true,
             infinite: true,
-            autoplay: true,
-            centerMode:true,
-            fade: true,
-            adaptiveHeight: true,
+            autoplay: false,
+            centerMode:false,
+            fade: false,
+            adaptiveHeight: false,
             dots: true,
             appendDots: $('.wrap-slick2-dots'),
             dotsClass:'slick2-dots',
@@ -43,7 +43,6 @@ $(document).ready(function(){
         e.preventDefault();
         //Включить прелоадер
         $('.preloader').show();
-        //
 
         let nameslider  = "slick2";
         let imgBlock = $('.main-carusel');
@@ -53,6 +52,9 @@ $(document).ready(function(){
                 imgBlock.append('<img src='+ '/images/1.jpg ' +'>');
                 imgBlock.append('<img src='+ '/images/2.jpg ' +'>');
                 imgBlock.append('<img src='+ '/images/4.jpg ' +'>');
+
+            //Блок Кнопок навигации слайдера
+            imgBlock.after('<div class="wrap-slick2-dots t-center"></div>');
             //Инициализация слайдера slick после получения всех images объекта
             initSlickSlider(nameslider);
         }
@@ -70,13 +72,12 @@ $(document).ready(function(){
                     '<li>Четверный пункт</li>' +
                     '</ul>',
             )
-
         }
 
         //Выключить прелоадер
         setTimeout(function(){
             $('.preloader').removeClass('show-preload');
-        },600);
+        },1600);
 
         var id = $('.modals');
         //Получаем ширину и высоту окна
@@ -90,6 +91,7 @@ $(document).ready(function(){
             $('body').addClass('modal-open');
     });
 
+    //Закрыть модальное окно по клику по фону
     $('.modals').on('click', function (e) {
         e.preventDefault();
         if($(e.target).closest('.modal-block').length == 0) {
@@ -99,6 +101,7 @@ $(document).ready(function(){
             $('.preloader').addClass('show-preload').hide();
         }
     });
+    //Закрыть модальное окно по клику по крестику
     $('.close-btn').on("click", function (e) {
         e.preventDefault();
         $('.overlay-bg').removeClass('show');
@@ -106,5 +109,15 @@ $(document).ready(function(){
         $('body').removeClass('modal-open');
         $('.preloader').addClass('show-preload').hide();
     })
+    // Закрытие по клавише Esc.
+    $(document).keydown(function(e) {
+        if (e.keyCode === 27) {
+                e.stopPropagation();
+            $('.overlay-bg').removeClass('show');
+            $('.modals').removeClass('show');
+            $('body').removeClass('modal-open');
+            $('.preloader').addClass('show-preload').hide();
+        }
+    });
 
 });

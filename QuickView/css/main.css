@@ -172,7 +172,7 @@ p.brw {
     }
 }
 
-/*==========    Slick slider=============*/
+/*==========    Slick slider  =============*/
 .slick2 {
     margin-bottom: 0 !important;
 }
@@ -273,7 +273,12 @@ p.brw {
     visibility: hidden;
     transition: all 600ms linear;
 }
-.preloader:after, .preloader:before {
+.show-preload {
+    opacity: 1;
+    visibility: visible;
+}
+.preloader .loader {
+    display: none;
     content: "";
     position: absolute;
     top: 50%;
@@ -286,9 +291,13 @@ p.brw {
     border-radius: 50%;
     border-right: 4px solid #5AAF63;
 }
-.preloader:after {
+.show-preload .loader {
+    display: block !important;
+}
+.preloader .loader {
     animation: 2s an1 infinite linear;
 }
+
 @keyframes an1 {
     to {
         transform: rotate(0);
@@ -296,10 +305,6 @@ p.brw {
     from {
         transform: rotate(360deg);
     }
-}
-.show-preload {
-    opacity: 1;
-    visibility: visible;
 }
 
 /* END BLOCK */
