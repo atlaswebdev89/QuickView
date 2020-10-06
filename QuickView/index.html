@@ -21,7 +21,8 @@
     <!--===============================================================================================-->
 </head>
 <body id="header" class="">
-
+<button id="open-popup">ОТКРЫТЬ</button>
+<a class="overlay" href="">Модальное окно</a>
 
 <section id="quickView" class="">
     <div class="container">
@@ -51,7 +52,7 @@
                     <div>
                         <div class="heading t-center">Товар 2</div>
                         <div class="items-product">
-                            <a href="#">
+                            <a href="images/2.jpg">
                                 <img src="images/2.jpg" class="img-fluid">
                             </a>
                         </div>
@@ -65,7 +66,7 @@
                         <div>
                             <div class="heading t-center">Товар 3</div>
                             <div class="items-product">
-                                <a href="#" class="t-center">
+                                <a href="images/4.jpg" class="t-center">
                                     <img src="images/4.jpg" class="img-fluid ">
                                 </a>
                             </div>
@@ -120,109 +121,79 @@
             </div>
     </div>
 </section>
-section id="quickView" class="">
-<div class="container">
-    <div class="row justify-content-center align-items-center t-center">
-        <div class="col-md-12 ">
-            <span>Примеры работ</span>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center align-items-center t-center">
+            <div class="col-md-12 ">
+                <span>Примеры работ</span>
+            </div>
         </div>
-    </div>
 
-    <div class="row justify-content-center align-items-start slick1 ">
+        <div class="row justify-content-center align-items-start">
 
-        <div class="col-md-4 ">
-            <div class="">
-                <div class="heading t-center">Товар 1</div>
-                <div class="items-product2">
-                    <a href="images/1.jpg">
-                        <img src="images/1.jpg" class="img-fluid">
-                    </a>
-                    <div style="display: none;">
-                        <a href="images/2.jpg">2</a>
-                        <a href="images/4.jpg">3</a>
+            <div class="col-md-4 ">
+                <div class="">
+                    <div class="heading t-center">Товар 1</div>
+                    <div class="image-links">
+                        <a href="images/1.jpg">
+                            <img src="images/1.jpg" class="img-fluid">
+                        </a>
+                        <a href="images/2.jpg"></a>
+                        <a href="images/4.jpg"></a>
+                    </div>
+                </div>
+                <div class="caption t-center ">
+                    <span>Описание товара</span>
+                </div>
+            </div>
+
+            <div class="col-md-4 ">
+                <div>
+                    <div class="heading t-center">Товар 2</div>
+                    <div class="items-product">
+                        <div class="image-links">
+                            <a href="images/2.jpg">
+                                <img src="images/2.jpg" class="img-fluid">
+                            </a>
+                            <a href="images/2.jpg"></a>
+                        </div>
+
+                    </div>
+                    <div class="caption t-center">
+                        <span>Описание товара</span>
                     </div>
                 </div>
             </div>
-            <div class="caption t-center ">
-                <span>Описание товара</span>
-            </div>
-        </div>
 
-        <div class="col-md-4 ">
-            <div>
-                <div class="heading t-center">Товар 2</div>
-                <div class="items-product">
-                    <a href="#">
-                        <img src="images/2.jpg" class="img-fluid">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
+            <div class="col-md-4">
+                <div>
+                    <div class="heading t-center">Товар 3</div>
+                    <div class="items-product">
+                        <div class="image-links">
+                            <a href="images/5.jpg" class="t-center ">
+                                <img src="images/5.jpg" class="img-fluid ">
+                            </a>
+                            <a href="images/6.jpg" ></a>
+                            <a href="images/7.jpg" ></a>
+                            <a href="images/8.jpg" ></a>
+                        </div>
+                    </div>
+                    <div class="caption t-center">
+                        <span>Описание товара</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-4">
-            <div>
-                <div class="heading t-center">Товар 3</div>
-                <div class="items-product">
-                    <a href="#" class="t-center">
-                        <img src="images/4.jpg" class="img-fluid ">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-md-4 ">
-            <div class="">
-                <div class="heading t-center">Товар 1</div>
-                <div class="items-product">
-                    <a href="#">
-                        <img src="images/1.jpg" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <div class="caption t-center ">
-                <span>Описание товара</span>
-            </div>
-        </div>
 
-        <div class="col-md-8 ">
-            <div>
-                <div class="heading t-center">Товар 2</div>
-                <div class="items-product">
-                    <a href="images/2.jpg">
-                        <img src="images/2.jpg" class="img-fluid">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-md-4">
-            <div>
-                <div class="heading t-center">Товар 3</div>
-                <div class="items-product">
-                    <a href="#" class="t-center">
-                        <img src="images/4.jpg" class="img-fluid ">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
 
+
+        </div>
     </div>
-</div>
 </section>
 
-<a href="#modal" class="overlay" name="modal">Простое модельное окно</a>
 <!-- Modal window QUickview product or project -->
 
 <section>
@@ -277,212 +248,9 @@ section id="quickView" class="">
 
 
 <div class="overlay-bg"></div>
-<div id="preload-quickview">
 
-</div>
 
-<section id="" class="">
-<div class="container">
-    <div class="row justify-content-center align-items-center t-center">
-        <div class="col-md-12 ">
-            <span>Примеры работ</span>
-        </div>
-    </div>
 
-    <div class="row justify-content-center align-items-start slick1 ">
-
-        <div class="col-md-4 ">
-            <div class="">
-                <div class="heading t-center">Товар 1</div>
-                <div class="items-product2">
-                    <a href="images/1.jpg">
-                        <img src="images/1.jpg" class="img-fluid">
-                    </a>
-                    <div style="display: none;">
-                        <a href="images/2.jpg">2</a>
-                        <a href="images/4.jpg">3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="caption t-center ">
-                <span>Описание товара</span>
-            </div>
-        </div>
-
-        <div class="col-md-4 ">
-            <div>
-                <div class="heading t-center">Товар 2</div>
-                <div class="items-product">
-                    <a href="#">
-                        <img src="images/2.jpg" class="img-fluid">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div>
-                <div class="heading t-center">Товар 3</div>
-                <div class="items-product">
-                    <a href="#" class="t-center">
-                        <img src="images/4.jpg" class="img-fluid ">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 ">
-            <div class="">
-                <div class="heading t-center">Товар 1</div>
-                <div class="items-product">
-                    <a href="#">
-                        <img src="images/1.jpg" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <div class="caption t-center ">
-                <span>Описание товара</span>
-            </div>
-        </div>
-
-        <div class="col-md-4 ">
-            <div>
-                <div class="heading t-center">Товар 2</div>
-                <div class="items-product">
-                    <a href="images/2.jpg">
-                        <img src="images/2.jpg" class="img-fluid">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div>
-                <div class="heading t-center">Товар 3</div>
-                <div class="items-product">
-                    <a href="#" class="t-center">
-                        <img src="images/4.jpg" class="img-fluid ">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-</section>
-<section id="" class="">
-<div class="container">
-    <div class="row justify-content-center align-items-center t-center">
-        <div class="col-md-12 ">
-            <span>Примеры работ</span>
-        </div>
-    </div>
-
-    <div class="row justify-content-center align-items-start slick1 ">
-
-        <div class="col-md-4 ">
-            <div class="">
-                <div class="heading t-center">Товар 1</div>
-                <div class="items-product2">
-                    <a href="images/1.jpg">
-                        <img src="images/1.jpg" class="img-fluid">
-                    </a>
-                    <div style="display: none;">
-                        <a href="images/2.jpg">2</a>
-                        <a href="images/4.jpg">3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="caption t-center ">
-                <span>Описание товара</span>
-            </div>
-        </div>
-
-        <div class="col-md-4 ">
-            <div>
-                <div class="heading t-center">Товар 2</div>
-                <div class="items-product">
-                    <a href="#">
-                        <img src="images/2.jpg" class="img-fluid">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div>
-                <div class="heading t-center">Товар 3</div>
-                <div class="items-product">
-                    <a href="#" class="t-center">
-                        <img src="images/4.jpg" class="img-fluid ">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 ">
-            <div class="">
-                <div class="heading t-center">Товар 1</div>
-                <div class="items-product">
-                    <a href="#">
-                        <img src="images/1.jpg" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <div class="caption t-center ">
-                <span>Описание товара</span>
-            </div>
-        </div>
-
-        <div class="col-md-4 ">
-            <div>
-                <div class="heading t-center">Товар 2</div>
-                <div class="items-product">
-                    <a href="images/2.jpg">
-                        <img src="images/2.jpg" class="img-fluid">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div>
-                <div class="heading t-center">Товар 3</div>
-                <div class="items-product">
-                    <a href="#" class="t-center">
-                        <img src="images/4.jpg" class="img-fluid ">
-                    </a>
-                </div>
-                <div class="caption t-center">
-                    <span>Описание товара</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-</section>
 
 
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>

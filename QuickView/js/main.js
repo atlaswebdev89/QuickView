@@ -1,22 +1,125 @@
 $(document).ready(function(){
     $('.slick1').slick({
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
+        appendArrows: $('.slick1'),
+        prevArrow:'<button class="arrow-slick2 prev-slick2"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+        nextArrow:'<button class="arrow-slick2 next-slick2"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
         adaptiveHeight: true,
+        responsive: [{
 
-    });
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                infinite: true
+            }
+
+        }, {
+
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                dots: true
+            }
+
+        }, {
+
+            breakpoint: 300,
+            settings: "unslick" // destroys slick
+        }]
+});
 
 
-    $('.items-product2').magnificPopup({
-        delegate: 'a', // child items selector, by clicking on it popup will open
-        type: 'image',
-        gallery: {
-            enabled: true
+
+//MultiGallery MagnificPopup
+$('.image-links').each(function () {
+    $(this).magnificPopup({
+        delegate: 'a',
+        type:'image',
+        preloader: true,
+        tLoading: 'Загрузка изображения #%curr%...',
+        removalDelay: 300,
+        zoom: {
+            enabled: true,
+            duration: 300, // продолжительность анимации. Не меняйте данный параметр также и в CSS
+            easing: 'ease',
+        },
+        gallery:{
+            enabled:true,
+            navigateByImgClick: false,
+            preload: [0, 1],
+        },
+        image: {
+            // options for image content type
+            titleSrc: function(item) {
+                return '<div class="ar"><ul ><li>fake Foobar</li><li>fake Foobar</li><li>fake Foobar</li><li>fake Foobar</li></ul></div>';
+                //return item.el.parent('article').find('h2').text() + item.el.parent('article').find('figcaption').text();
+            },
+
         }
-        // other options
     });
+})
+
+/*MagnificPopup for Ajax*/
+    $('#open-popup').on("click", function (elem){
+        elem.preventDefault();
+
+        // Или вот так $.magnificPopup.open({})
+
+        $(this).magnificPopup({
+            preloader: true,
+            tLoading: 'Загрузка изображения #%curr%...',
+
+            items: [
+                {
+                    src: 'images/7.jpg',
+                    title: 'Peter & Paul fortress in SPB'
+                },
+                {
+                    src: 'https://vimeo.com/123123',
+                    type: 'iframe' // this overrides default type
+                },
+                {
+                    src: $('<div class="white-popup">Dynamically created element</div>'), // Dynamically created element
+                    type: 'inline'
+                },
+                {
+                    src: '<div class="white-popup">Popup from HTML string</div>', // HTML string
+                    type: 'inline'
+                },
+                {
+                    src: '#my-popup', // CSS selector of an element on page that should be used as a popup
+                    type: 'inline'
+                },
+                {
+                    src: 'images/10.jpg', // CSS selector of an element on page that should be used as a popup
+
+                }
+            ],
+            gallery: {
+                enabled: true
+            },
+            type: 'image', // this is a default type
+            image: {
+                tError: '<a href="%url%">The image</a> could not be loaded.', // Error message
+                title: 'Peter & Paul fortress in SPB'
+            }
+        }).magnificPopup('open');;
+    })
+
+
+
+
+
+
+
+
+
+
 
     function initSlickSlider (elem) {
         $('.'+elem).slick({
@@ -61,9 +164,10 @@ $(document).ready(function(){
 
         if(!descBlock.hasClass('load-desc')) {
                 descBlock.addClass('load-desc');
-                descBlock.prepend(
+                descBlock.append(
                 '<h3>Название товара</h3>'
             ).append(
+                    '<p>Бренд</p>',
                     '<p>Описание товара: что по чем и характеристики что по чем и характеристики</p>',
                     '<ul>' +
                     '<li>Первый пункт</li>' +
@@ -71,6 +175,7 @@ $(document).ready(function(){
                     '<li>Третий пункт</li>' +
                     '<li>Четверный пункт</li>' +
                     '</ul>',
+                    '<div><p></p></p></div>'
             )
         }
 
