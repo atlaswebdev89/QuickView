@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('.slick1').slick({
-        infinite: true,
+        infinite: false,
         autoplay: true,
         autoplaySpeed: 3000,
         slidesToShow: 3,
@@ -15,7 +15,7 @@ $(document).ready(function(){
             breakpoint: 1024,
             settings: {
                 slidesToShow: 2,
-                infinite: true
+                infinite: false
             }
 
         }, {
@@ -33,7 +33,15 @@ $(document).ready(function(){
         }]
 });
 
-
+    $('.slick1').magnificPopup({
+        delegate: '.items-product a',
+        type:'image',
+        gallery:{
+            enabled:true,
+            navigateByImgClick: false,
+            preload: [0, 1],
+        },
+    });
 
 //MultiGallery MagnificPopup
 $('.image-links').each(function () {
@@ -63,6 +71,8 @@ $('.image-links').each(function () {
         }
     });
 })
+
+
 
 /*MagnificPopup for Ajax*/
     $('#open-popup').on("click", function (elem){
@@ -106,7 +116,9 @@ $('.image-links').each(function () {
             type: 'image', // this is a default type
             image: {
                 tError: '<a href="%url%">The image</a> could not be loaded.', // Error message
-                title: 'Peter & Paul fortress in SPB'
+                titleSrc: function (e) {
+                    return 'Peter & Paul fortress in SPB'
+                }
             }
         }).magnificPopup('open');;
     })

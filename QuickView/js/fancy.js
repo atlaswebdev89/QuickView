@@ -1,4 +1,40 @@
 $(document).ready(function () {
+    $('.slick2').slick({
+        infinite: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        appendArrows: $('.slick2'),
+        prevArrow:'<button class="arrow-slick2 prev-slick2"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+        nextArrow:'<button class="arrow-slick2 next-slick2"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+        adaptiveHeight: true,
+        responsive: [{
+
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                infinite: true
+            }
+
+        }, {
+
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                dots: true
+            }
+
+        }, {
+
+            breakpoint: 300,
+            settings: "unslick" // destroys slick
+        }]
+    });
+
+
+
 // Init fancybox
     $().fancybox({
         selector:('.items-product a'),
@@ -10,11 +46,36 @@ $(document).ready(function () {
             'close'
         ],
         thumbs   : {
-            autoStart : true
+            autoStart: true
         },
-        protect: true
+        protect: true,
+        loop: true,
     });
 
+
+
+
+/* Multi gallery FancyBox */
+    /*
+$('.items-product').each(function () {
+   let item = $(this).find('a');
+    $().fancybox({
+        selector:$item,
+        buttons : [
+            'slideShow',
+            'share',
+            'zoom',
+            'fullScreen',
+            'close'
+        ],
+        thumbs   : {
+            autoStart: true
+        },
+        protect: true,
+        loop: true,
+    });
+})
+*/
 $('.clickyn').on("click", function(e) {
     e.preventDefault();
     $.fancybox.open([
@@ -36,5 +97,26 @@ $('.clickyn').on("click", function(e) {
         loop : false
     });
 })
+
+$('.owl-carousel').owlCarousel({
+    loop:false,
+    margin:10,
+    nav:true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    rewind: true,
+    dots: true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:3
+        }
+    }
+});
 
 })
