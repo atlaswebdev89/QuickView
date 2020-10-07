@@ -337,3 +337,17 @@ p.brw {
 .image-links img {
     min-height: 320px;
 }
+
+/* Jquery lightGallery */
+.lightgallery a:first-child {
+    visibility: visible;
+}
+.lightgallery a{
+    visibility: hidden;
+
+}
+/* END LightGallery */
+
+
+
+

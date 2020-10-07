@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('.slick1').slick({
-        infinite: true,
+        infinite: false,
         autoplay: true,
         autoplaySpeed: 3000,
         slidesToShow: 3,
@@ -15,7 +15,7 @@ $(document).ready(function(){
             breakpoint: 1024,
             settings: {
                 slidesToShow: 2,
-                infinite: true
+                infinite: false
             }
 
         }, {
