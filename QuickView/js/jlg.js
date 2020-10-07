@@ -41,6 +41,14 @@ $(document).ready(function () {
             showThumbByDefault: true,
             subHtmlSelectorRelative: true,
         });
+        $(this).on('onBeforeOpen.lg', function (){
+            console.log("OPEN");
+            $(this).closest('.slick').slick('slickPause');
+        })
+        $(this).on('onCloseAfter.lg', function (){
+            console.log("CLOSE");
+            $(this).closest('.slick').slick('slickPlay');
+        })
     })
 
     /*Dymanic load*/

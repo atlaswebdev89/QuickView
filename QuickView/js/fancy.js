@@ -34,6 +34,8 @@ $(document).ready(function () {
     });
 
 
+    let carusel = $('.slick2');
+    let owl = $('.owl-carousel');
 
 // Init fancybox
     $().fancybox({
@@ -55,6 +57,16 @@ $(document).ready(function () {
         },
         protect: true,
         loop: true,
+        beforeShow: function (){
+            console.log('OPEN');
+            carusel.slick('slickPause');
+            owl.trigger('stop.owl.autoplay');
+        },
+        afterClose: function (){
+            console.log("CLOSE");
+            carusel.slick('slickPlay');
+            owl.trigger('play.owl.autoplay');
+        }
     });
 
 

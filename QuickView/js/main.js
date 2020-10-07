@@ -41,6 +41,17 @@ $(document).ready(function(){
             navigateByImgClick: false,
             preload: [0, 1],
         },
+        callbacks: {
+            open: function() {
+                console.log('OPEN');
+                $('.slick1').slick('slickPause');
+            },
+            close: function() {
+                console.log('CLOSER');
+                $('.slick1').slick('slickPlay');
+            }
+            // e.t.c.
+        }
     });
 
 //MultiGallery MagnificPopup
@@ -68,6 +79,17 @@ $('.image-links').each(function () {
                 //return item.el.parent('article').find('h2').text() + item.el.parent('article').find('figcaption').text();
             },
 
+        },
+        callbacks: {
+            open: function() {
+                console.log('OPEN');
+                $(this).closest('.slick1').slick('slickPause');
+            },
+            close: function() {
+                console.log('CLOSER');
+                $(this).closest('.slick1').slick('slickPlay');
+            }
+            // e.t.c.
         }
     });
 })
