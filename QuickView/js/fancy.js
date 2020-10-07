@@ -38,6 +38,11 @@ $(document).ready(function () {
 // Init fancybox
     $().fancybox({
         selector:('.items-product a'),
+        animationEffect: "zoom",
+        // Duration in ms for open/close animation
+        animationDuration: 600,
+        transitionEffect: "circular",
+        transitionDuration: 700,
         buttons : [
             'slideShow',
             'share',
@@ -118,5 +123,6 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
+
 
 })
