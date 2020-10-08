@@ -163,10 +163,21 @@ $('.image-links').each(function () {
         let imgBlock = $('.main-carusel');
         let descBlock = $('.desc-block');
         if(!imgBlock.hasClass(nameslider)) {
+            //для разных товаров добавлять class или data атрибут ID выбраного товара, для исключения повторной загрузки ajax
+            //ри повторном открытии модального окна проверить ID товара, если другой.. Очищать контейнер и загружать новые данные
             imgBlock.addClass(nameslider);
-                imgBlock.append('<img src='+ '/images/1.jpg ' +'>');
-                imgBlock.append('<img src='+ '/images/2.jpg ' +'>');
-                imgBlock.append('<img src='+ '/images/4.jpg ' +'>');
+
+            let photo = [
+                {img: '/images/1.jpg'},
+                {img: '/images/2.jpg'},
+                {img: '/images/4.jpg'}
+            ]
+            $.template('images', $('#img-tmpl').html());
+            $.tmpl('images', photo).appendTo(imgBlock);
+
+            //    imgBlock.append('<img src='+ '/images/1.jpg ' +'>');
+            //    imgBlock.append('<img src='+ '/images/2.jpg ' +'>');
+            //    imgBlock.append('<img src='+ '/images/4.jpg ' +'>');
 
             //Блок Кнопок навигации слайдера
             imgBlock.after('<div class="wrap-slick2-dots t-center"></div>');
@@ -176,19 +187,13 @@ $('.image-links').each(function () {
 
         if(!descBlock.hasClass('load-desc')) {
                 descBlock.addClass('load-desc');
-                descBlock.append(
-                '<h3>Название товара</h3>'
-            ).append(
-                    '<p>Бренд</p>',
-                    '<p>Описание товара: что по чем и характеристики что по чем и характеристики</p>',
-                    '<ul>' +
-                    '<li>Первый пункт</li>' +
-                    '<li>второй пункт</li>' +
-                    '<li>Третий пункт</li>' +
-                    '<li>Четверный пункт</li>' +
-                    '</ul>',
-                    '<div><p></p></p></div>'
-            )
+
+                let description = [
+                    {name: 'Product 1'}
+                ]
+
+            $.template('desc', $('#template').html());
+            $.tmpl('desc', description).appendTo('.desc-block');
         }
 
         //Выключить прелоадер
